@@ -18,8 +18,8 @@ namespace DocProject.Controllers
         [ResponseHeader("name","value")]
         public ActionResult Index()
         {
-            ViewBag.Restaurant = "";
-            TempData["som"] = "tempDat";
+            //ViewBag.Restaurant = "";
+            //TempData["som"] = "tempDat";
             //  dynamic test = new { test = "tee" };
             Restos = restaurantRepository.GetAllResto();
             if (Restos!=null)
