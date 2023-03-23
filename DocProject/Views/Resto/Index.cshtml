@@ -43,12 +43,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.rating)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.uuid }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.uuid  }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.uuid  })
+            <td class="d-flex">
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.uuid },new { @class = "btn btn-warning m-1" })
+                    @Html.ActionLink("Details", "Details", new { id=item.uuid  },new { @class = "btn btn-info m-1" })
+                    <form asp-action="Delete" onsubmit="return confirm('are You Sure !!!');" asp-route-id="@item.uuid">
+                        <input type="submit" value="Delete" class="btn btn-danger m-1" />
+                    </form>
             </td>
         </tr>
 }
     </tbody>
 </table>
+

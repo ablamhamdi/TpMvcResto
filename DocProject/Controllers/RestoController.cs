@@ -93,11 +93,11 @@ namespace DocProject.Controllers
         }
 
         // GET: RestoController/Delete/5
-        public ActionResult Delete(int id)
-        {
+        //public ActionResult Delete(int id)
+        //{
            
-            return View();
-        }
+        //    return View();
+        //}
 
         // POST: RestoController/Delete/5
         [HttpPost]
