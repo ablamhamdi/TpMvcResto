@@ -20,17 +20,25 @@ namespace DocProject.Controllers
         {
             ViewBag.Restaurant = "";
             TempData["som"] = "tempDat";
-          //  dynamic test = new { test = "tee" };
+            //  dynamic test = new { test = "tee" };
             Restos = restaurantRepository.GetAllResto();
-            return View(Restos);
+            if (Restos!=null)
+            {
+                return View(Restos);
+            }
+            return View();
+           
+          
         }
         [Route("RouteExample")]
         public ActionResult RouteExample() => View("RouteExample");
         // GET: RestoController/Details/5
         public ActionResult Details(int id)
         {
-            
-            return View(restaurantRepository.GetResto(id));
+            var resto = restaurantRepository.GetResto(id);
+            if (resto!=null)
+                 return View(resto);
+            return View();
         }
 
         // GET: RestoController/Create

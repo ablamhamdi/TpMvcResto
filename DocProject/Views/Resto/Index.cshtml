@@ -7,22 +7,22 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-success" asp-action="Create">Create New</a>
 </p>
 <h1>@ViewBag.Restaurant</h1>
 <table class="table">
-    <thead>
+    <thead class="thead-dark">
         <tr>
-            <th>
+            <th scope="col">
                 @Html.DisplayNameFor(model => model.uuid)
             </th>
-            <th>
+            <th scope="col">
                 @Html.DisplayNameFor(model => model.name)
             </th>
-            <th>
+            <th scope="col">
                 @Html.DisplayNameFor(model => model.description)
             </th>
-            <th>
+            <th scope="col">
                 @Html.DisplayNameFor(model => model.rating)
             </th>
             <th></th>
@@ -30,7 +30,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+            <tr scope="row">
             <td>
                 @Html.DisplayFor(modelItem => item.uuid)
             </td>
